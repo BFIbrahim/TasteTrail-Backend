@@ -15,6 +15,8 @@ app.use(cors());
 app.use(express.json());
 
 app.use(require("./routes/auth.routes"));
+app.use("/users", require("./routes/user.routes"));
+
 
 app.get("/", (req, res) => {
     res.send("TasteTrail Server is Running");
