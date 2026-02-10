@@ -14,8 +14,14 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.use(require("./routes/auth.routes"));
+
+app.get("/", (req, res) => {
+    res.send("TasteTrail Server is Running");
+});
+
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+    console.log(`Server running on port ${PORT}`);
 });
 
 
