@@ -16,6 +16,7 @@ app.use(express.json());
 
 app.use(require("./routes/auth.routes"));
 app.use("/users", require("./routes/user.routes"));
+app.use("/categories", require("./routes/category.routes"));
 
 
 app.get("/", (req, res) => {
