@@ -20,6 +20,7 @@ app.use("/categories", require("./routes/category.routes"));
 app.use("/recipes", require("./routes/recipe.routes"))
 app.use("/reviews", require("./routes/review.routes"));
 app.use("/cookbook", require("./routes/cookbook.routes"));
+app.use("/meal-planner", require("./routes/mealPlanner.routes"));
 
 
 app.get("/", (req, res) => {
