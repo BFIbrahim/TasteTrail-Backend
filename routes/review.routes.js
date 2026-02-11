@@ -9,14 +9,16 @@ const {
     deleteReview
 } = require("../controllers/review.controller");
 const verifyToken = require("../middlewares/verifyToken");
+const { verifyAdmin } = require("../middlewares/verifyAdmin");
+
 
 router.get("/:recipeId", getRecipeReviews);
 
 router.post("/", verifyToken, postReview);
 
-router.get("/admin/pending", verifyToken, getPendingReviews); 
-router.patch("/approve/:id", verifyToken, approveReview);
-router.patch("/status/:id", verifyToken, updateReviewStatus);
-router.delete("/admin/:id", verifyToken, deleteReview);
+router.get("/admin/pending", verifyToken, verifyAdmin, getPendingReviews); 
+router.patch("/approve/:id", verifyToken, verifyAdmin, approveReview);
+router.patch("/status/:id", verifyToken, verifyAdmin, updateReviewStatus);
+router.delete("/admin/:id", verifyToken,verifyAdmin, deleteReview);
 
 module.exports = router;

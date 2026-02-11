@@ -17,7 +17,7 @@ const userSchema = new mongoose.Schema(
     },
 
     profileImage: {
-      type: String, // imgbb hosted image URL
+      type: String,
       required: true,
     },
 
